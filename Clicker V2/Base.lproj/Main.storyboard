@@ -177,7 +177,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click to start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDJ-qc-iOP">
-                                        <rect key="frame" x="117" y="406" width="141" height="32"/>
+                                        <rect key="frame" x="115" y="459" width="141" height="32"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -186,9 +186,9 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="KDJ-qc-iOP" firstAttribute="centerX" secondItem="MF6-Pm-4q0" secondAttribute="centerX" id="2ln-rX-xIy"/>
+                                    <constraint firstItem="KDJ-qc-iOP" firstAttribute="centerX" secondItem="MF6-Pm-4q0" secondAttribute="centerX" constant="-2" id="2ln-rX-xIy"/>
                                     <constraint firstItem="cYm-ln-TuN" firstAttribute="bottom" secondItem="MF6-Pm-4q0" secondAttribute="bottomMargin" id="3h2-jo-2oP"/>
-                                    <constraint firstItem="cYm-ln-TuN" firstAttribute="top" secondItem="KDJ-qc-iOP" secondAttribute="bottom" constant="84" id="3oC-Qw-WqG"/>
+                                    <constraint firstItem="cYm-ln-TuN" firstAttribute="top" secondItem="KDJ-qc-iOP" secondAttribute="bottom" constant="31" id="3oC-Qw-WqG"/>
                                     <constraint firstItem="Fgg-6Z-hUw" firstAttribute="top" secondItem="MF6-Pm-4q0" secondAttribute="top" constant="18" id="3ov-mR-fjh"/>
                                     <constraint firstItem="cYm-ln-TuN" firstAttribute="top" secondItem="MF6-Pm-4q0" secondAttribute="top" constant="522" id="96Z-jA-ZEj"/>
                                     <constraint firstItem="cYm-ln-TuN" firstAttribute="leading" secondItem="MF6-Pm-4q0" secondAttribute="leading" id="Elm-IE-Tzh"/>
@@ -203,8 +203,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCb-vl-HBe">
-                                <rect key="frame" x="169" y="287" width="37" height="73"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCb-vl-HBe">
+                                <rect key="frame" x="169" y="189" width="37" height="223"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -222,12 +222,12 @@
                             <constraint firstItem="Nje-yx-0ph" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="34m-WR-KvL"/>
                             <constraint firstItem="KCb-vl-HBe" firstAttribute="centerX" secondItem="MF6-Pm-4q0" secondAttribute="centerX" id="3U2-oO-Dkb"/>
                             <constraint firstItem="MF6-Pm-4q0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="B6o-s3-i5n"/>
-                            <constraint firstItem="KCb-vl-HBe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="287" id="Ei2-T3-1Iw"/>
+                            <constraint firstItem="KCb-vl-HBe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="189" id="Ei2-T3-1Iw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="MF6-Pm-4q0" secondAttribute="bottom" constant="-21" id="HVi-cX-TwK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Nje-yx-0ph" secondAttribute="bottom" constant="196" id="LHx-0t-O4a"/>
                             <constraint firstItem="MF6-Pm-4q0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="VAX-zf-H40"/>
                             <constraint firstItem="MF6-Pm-4q0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="34.5" id="eOv-fb-x8q"/>
-                            <constraint firstItem="KCb-vl-HBe" firstAttribute="centerY" secondItem="MF6-Pm-4q0" secondAttribute="centerY" constant="-34.5" id="raO-e1-odc"/>
+                            <constraint firstItem="KCb-vl-HBe" firstAttribute="centerY" secondItem="MF6-Pm-4q0" secondAttribute="centerY" constant="-57.5" id="raO-e1-odc"/>
                             <constraint firstItem="MF6-Pm-4q0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tG1-NY-IEF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -235,6 +235,7 @@
                             <outletCollection property="gestureRecognizers" destination="m35-aZ-wFm" appends="YES" id="VaB-yM-Smb"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="gbN-FT-ekd"/>
                     <connections>
                         <outlet property="clickerLabel" destination="KCb-vl-HBe" id="p7H-im-6dn"/>
                         <outlet property="clicksLeftLabel" destination="QTS-Ht-W8a" id="6uu-up-PIa"/>
@@ -246,7 +247,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="h1f-Nh-Eoj" userLabel="Exit" sceneMemberID="exit"/>
-                <tapGestureRecognizer id="m35-aZ-wFm">
+                <tapGestureRecognizer cancelsTouchesInView="NO" delaysTouchesEnded="NO" id="m35-aZ-wFm">
                     <connections>
                         <action selector="screenTapped:" destination="BYZ-38-t0r" id="hRv-RP-JO9"/>
                     </connections>
