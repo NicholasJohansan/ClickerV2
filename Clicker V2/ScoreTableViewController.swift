@@ -44,8 +44,16 @@ class ScoreTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "scoreRow", for: indexPath)
 
-        if let textLabel = cell.textLabel {
-            textLabel.text = String(scores[indexPath.row].timeTaken)
+        if let cell = cell as? ScoreTableViewCell {
+            let currentScore = scores[indexPath.row]
+            if currentScore.new == true {
+                cell.newView.isHidden = false
+            } else {
+                cell.newView.isHidden = true
+            }
+            cell.timeLabel.text = "\(currentScore.clicksPerSecond) CPS"
+            cell.cpsLabel.text = "\(currentScore.clicks) clicks / \(currentScore.timeTaken)s"
+            cell.timestampLabel.text = "\(currentScore.date) - \(currentScore.time)"
         }
 
         return cell
@@ -55,9 +63,16 @@ class ScoreTableViewController: UITableViewController {
         if segue.identifier == "exitClicker" {
             let source = segue.source as! ClickerViewController
             
-            let time = Float(String(format: "%.2f", source.timer))
+            for score in scores {
+                if score.new == true {
+                    score.new = false
+                }
+            }
             
-            scores.append(Score(timeTaken: time!, timestamp: source.timestamp, clicks: source.clicksNeeded))
+            scores.append(Score(timeTaken: source.timer, timestamp: source.timestamp, clicks: source.clicksNeeded))
+            
+            scores = scores.sorted(by: { $0.clicksPerSecond > $1.clicksPerSecond })
+            
             Score.saveToFile(scores: scores)
             tableView.reloadData()
         }

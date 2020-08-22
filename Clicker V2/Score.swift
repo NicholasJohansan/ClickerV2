@@ -14,19 +14,25 @@ class Score: Codable {
     var date: String
     var clicks: Int
     var clicksPerSecond: Float
+    var new: Bool = true
     
     init(timeTaken: Float, timestamp: Date, clicks: Int) {
+        
         self.timeTaken = timeTaken
         self.clicks = clicks
         self.clicksPerSecond = Float(self.clicks)/self.timeTaken
         
-        let formatter = DateFormatter()
+        //rounding off
+        self.clicksPerSecond = Float(String(format: "%.2f", self.clicksPerSecond))!
+        self.timeTaken = Float(String(format: "%.2f", self.timeTaken))!
         
-        formatter.setLocalizedDateFormatFromTemplate("d MMM yyyy")
-        self.date = formatter.string(from: timestamp)
+        let dateFormatter = DateFormatter()
         
-        formatter.setLocalizedDateFormatFromTemplate("h:mm a")
-        self.time = formatter.string(from: timestamp)
+        dateFormatter.setLocalizedDateFormatFromTemplate("d MMM yyyy")
+        self.date = dateFormatter.string(from: timestamp)
+        
+        dateFormatter.setLocalizedDateFormatFromTemplate("h:mm a")
+        self.time = dateFormatter.string(from: timestamp)
     }
     
     static func getArchiveURL() -> URL {
