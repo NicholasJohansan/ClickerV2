@@ -30,9 +30,14 @@ class ClickerViewController: UIViewController {
         
         if counter == 30 {
             print("Maximum reached in \(timer) seconds")
+               }
         }
     }
-    
+
+    func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "exitClicker"{
+       
+    }
 
 }
 
