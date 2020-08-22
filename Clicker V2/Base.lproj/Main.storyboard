@@ -14,7 +14,10 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Xe2-CM-4Cp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="scoreRow" id="3CP-Bg-7rg">
                                 <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
@@ -30,7 +33,7 @@
                             <outlet property="delegate" destination="IQK-xH-x62" id="LAr-BI-f8r"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Scores" id="oNf-2Q-0dZ">
+                    <navigationItem key="navigationItem" title="Scores" largeTitleDisplayMode="always" id="oNf-2Q-0dZ">
                         <barButtonItem key="rightBarButtonItem" title="Play" id="E5j-Nz-Yjo">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="presentation" id="tRS-em-I9r"/>
@@ -50,18 +53,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MF6-Pm-4q0">
+                                <rect key="frame" x="0.0" y="48" width="375" height="554"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCb-vl-HBe">
-                                <rect key="frame" x="169" y="287.5" width="37" height="72"/>
+                                <rect key="frame" x="169" y="287" width="37" height="73"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="KCb-vl-HBe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ViD-1w-6fE"/>
-                            <constraint firstItem="KCb-vl-HBe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dkc-UK-Vg6"/>
+                            <constraint firstItem="KCb-vl-HBe" firstAttribute="centerX" secondItem="MF6-Pm-4q0" secondAttribute="centerX" id="3U2-oO-Dkb"/>
+                            <constraint firstItem="MF6-Pm-4q0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="B6o-s3-i5n"/>
+                            <constraint firstItem="KCb-vl-HBe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="287" id="Ei2-T3-1Iw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="MF6-Pm-4q0" secondAttribute="bottom" constant="45" id="HVi-cX-TwK"/>
+                            <constraint firstItem="MF6-Pm-4q0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="VAX-zf-H40"/>
+                            <constraint firstItem="MF6-Pm-4q0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="1.5" id="eOv-fb-x8q"/>
+                            <constraint firstItem="KCb-vl-HBe" firstAttribute="centerY" secondItem="MF6-Pm-4q0" secondAttribute="centerY" constant="-1.5" id="raO-e1-odc"/>
+                            <constraint firstItem="MF6-Pm-4q0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tG1-NY-IEF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <connections>
@@ -91,6 +110,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bZU-eY-6WN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
