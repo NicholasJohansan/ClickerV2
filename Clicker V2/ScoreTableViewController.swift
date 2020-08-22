@@ -46,12 +46,12 @@ class ScoreTableViewController: UITableViewController {
     }
     
     @IBAction func unwindToScoreTable(segue: UIStoryboardSegue) {
-        if segue.identifier == "exitClicker"{
-            let source = segue.source as? ClickerViewController
-            scores.append(source?.timer ?? 0.0)
-            
-            
+        if segue.identifier == "exitClicker" {
+            let source = segue.source as! ClickerViewController
+            scores.append(source.timer)
+            tableView.reloadData()
         }
+        
         
     }
     
