@@ -9,10 +9,16 @@
 import UIKit
 
 class ScoreTableViewController: UITableViewController {
-    var scores: [Float] = []
+    var scores: [Score] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let loadedScores = Score.loadFromFile() {
+            scores = loadedScores
+        } else {
+            Score.saveToFile(scores: scores)
+        }
         
 
         // Uncomment the following line to preserve selection between presentations
@@ -39,7 +45,7 @@ class ScoreTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "scoreRow", for: indexPath)
 
         if let textLabel = cell.textLabel {
-            textLabel.text = String(scores[indexPath.row])
+            textLabel.text = String(scores[indexPath.row].timeTaken)
         }
 
         return cell
@@ -48,7 +54,11 @@ class ScoreTableViewController: UITableViewController {
     @IBAction func unwindToScoreTable(segue: UIStoryboardSegue) {
         if segue.identifier == "exitClicker" {
             let source = segue.source as! ClickerViewController
-            scores.append(source.timer)
+            
+            let time = Float(String(format: "%.2f", source.timer))
+            
+            scores.append(Score(timeTaken: time!, timestamp: source.timestamp, clicks: source.clicksNeeded))
+            Score.saveToFile(scores: scores)
             tableView.reloadData()
         }
         
@@ -64,17 +74,16 @@ class ScoreTableViewController: UITableViewController {
     }
     */
 
-    /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            scores.remove(at: indexPath.row)
+            Score.saveToFile(scores: scores)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
 
     /*
     // Override to support rearranging the table view.

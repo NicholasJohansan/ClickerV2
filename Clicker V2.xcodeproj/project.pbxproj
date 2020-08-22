@@ -13,6 +13,7 @@
 		48AD7FB924F0BA8600DB7C2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48AD7FB724F0BA8600DB7C2A /* Main.storyboard */; };
 		48AD7FBB24F0BA8B00DB7C2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48AD7FBA24F0BA8B00DB7C2A /* Assets.xcassets */; };
 		48AD7FBE24F0BA8B00DB7C2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48AD7FBC24F0BA8B00DB7C2A /* LaunchScreen.storyboard */; };
+		48AD7FC824F0E38A00DB7C2A /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AD7FC724F0E38A00DB7C2A /* Score.swift */; };
 		BC3CCBE124F0C38300C2A75F /* ScoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3CCBE024F0C38300C2A75F /* ScoreTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		48AD7FBA24F0BA8B00DB7C2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48AD7FBD24F0BA8B00DB7C2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48AD7FBF24F0BA8B00DB7C2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48AD7FC724F0E38A00DB7C2A /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		BC3CCBE024F0C38300C2A75F /* ScoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				48AD7FB124F0BA8600DB7C2A /* AppDelegate.swift */,
+				48AD7FC724F0E38A00DB7C2A /* Score.swift */,
 				48AD7FB324F0BA8600DB7C2A /* SceneDelegate.swift */,
 				48AD7FB524F0BA8600DB7C2A /* ClickerViewController.swift */,
 				48AD7FB724F0BA8600DB7C2A /* Main.storyboard */,
@@ -145,6 +148,7 @@
 				48AD7FB624F0BA8600DB7C2A /* ClickerViewController.swift in Sources */,
 				48AD7FB224F0BA8600DB7C2A /* AppDelegate.swift in Sources */,
 				48AD7FB424F0BA8600DB7C2A /* SceneDelegate.swift in Sources */,
+				48AD7FC824F0E38A00DB7C2A /* Score.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
