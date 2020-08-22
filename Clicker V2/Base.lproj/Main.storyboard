@@ -70,9 +70,11 @@
                     </view>
                     <connections>
                         <outlet property="clickerLabel" destination="KCb-vl-HBe" id="p7H-im-6dn"/>
+                        <segue destination="h1f-Nh-Eoj" kind="unwind" identifier="exitClicker" unwindAction="unwindToScoreTableWithSegue:" id="Djz-a7-eKx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="h1f-Nh-Eoj" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="m35-aZ-wFm">
                     <connections>
                         <action selector="screenTapped:" destination="BYZ-38-t0r" id="hRv-RP-JO9"/>

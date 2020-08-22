@@ -45,6 +45,10 @@ class ScoreTableViewController: UITableViewController {
         return cell
     }
     
+    @IBAction func unwindToScoreTable(segue: UIStoryboardSegue) {
+        
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
