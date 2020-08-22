@@ -19,6 +19,12 @@ class ClickerViewController: UIViewController {
     }
     
     @IBAction func screenTapped(_ sender: Any) {
+        counter += 1
+        clickerLabel.text = String(counter)
+        
+        if counter == 30 {
+            print("Maximum reached")
+        }
     }
     
 
