@@ -10,6 +10,7 @@ import UIKit
 
 class ScoreTableViewController: UITableViewController {
     var scores: [Score] = []
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,12 @@ class ScoreTableViewController: UITableViewController {
             Score.saveToFile(scores: scores)
         }
         
+        if let _ = defaults.object(forKey: "totalClicks") as? Int {
+            //pass
+        } else {
+            defaults.set(30, forKey: "totalClicks")
+        }
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -28,6 +35,27 @@ class ScoreTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    @IBAction func setTotalClicks(_ sender: Any) {
+        
+        let totalClicks = defaults.object(forKey: "totalClicks") as? Int ?? 30
+        
+        let alert = UIAlertController(title: "Set Total Clicks", message: "Enter how many times to click in total", preferredStyle: .alert)
+        
+        alert.addTextField(configurationHandler: {(textField: UITextField!) in
+            textField.placeholder = "Enter number:"
+            textField.text = String(totalClicks)
+        })
+        
+        alert.addAction(UIAlertAction(title: "Set", style: .default, handler: { (_) in
+            if let clicks = Int(alert.textFields![0].text!) {
+                self.defaults.set(clicks, forKey: "totalClicks")
+            }
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+        
+        
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
