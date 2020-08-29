@@ -97,7 +97,7 @@ class ScoreTableViewController: UITableViewController {
                 }
             }
             
-            scores.append(Score(timeTaken: source.timer, timestamp: source.timestamp, clicks: source.clicksNeeded))
+            scores.append(Score(timeTaken: source.time, timestamp: source.timestamp, clicks: source.clicksNeeded))
             
             scores = scores.sorted(by: { $0.clicksPerSecond > $1.clicksPerSecond })
             
