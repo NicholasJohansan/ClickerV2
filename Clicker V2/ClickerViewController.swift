@@ -20,6 +20,7 @@ class ClickerViewController: UIViewController {
     
     var counter = 0
     var time: Float = 0.0
+    var timer: Timer!
     var timestamp: Date!
     var clicksNeeded: Int = 30
     
@@ -35,7 +36,7 @@ class ClickerViewController: UIViewController {
         
         if counter == 0 {
             timestamp = Date()
-            Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { _ in
+            timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { _ in
                 self.time += 0.1
                 self.timeElapsedLabel.text = "\(String(format: "%.2f", self.time))s"
             })
